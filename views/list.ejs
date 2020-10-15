@@ -1,0 +1,31 @@
+<%- include("header") -%>
+
+  <div class="box" id="heading">
+    <h1 > <%= titleInEjs %> </h1>
+  </div>
+<div class="box">
+<% for(let i=0; i< newItemsInejs.length;i++)  {  %>
+
+<form class="" action="/delete" method="post">
+
+    <div class="item">
+        <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%=newItemsInejs[i]._id%>">
+       <p>  <%=newItemsInejs[i].itemName%> </p>
+    </div>
+<input type="hidden" name="listNameToDelete" value="<%=titleInEjs%>"></input>
+</form>
+
+    <%  } %>
+
+    <form class="item" action="/" method="post">
+
+      <input type="text" name="newItemInejs" placeholder="New-Item">
+      <button type="submit" name="listName" value= "<%=titleInEjs%>" >+</button>
+    </form>
+
+</div>
+
+
+
+
+<%- include("footer") -%>
